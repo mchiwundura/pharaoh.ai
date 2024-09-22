@@ -1,0 +1,79 @@
+body {
+	overflow-x: hidden;
+	background-color: #303030;
+}
+
+@keyframes loadingAnimation {
+	0% {
+		width: 0px;
+	}
+	100% {
+		width: 288px;
+	}
+}
+
+.loading {
+	animation: 3s ease-out 5s 1 loadingAnimation;
+}
+
+.blog_content h2::before {
+	content: "";
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.form-input {
+		@apply text-2xl text-white flex pl-4 m-5 min-h-[50px] rounded bg-[#454545];
+	}
+	.blog_content h2 {
+		@apply text-2xl relative my-5;
+	}
+	.blog_content h2::before {
+		@apply absolute h-9 w-1 -left-2 opacity-80 rounded;
+	}
+
+	.blog_content p {
+		@apply my-1;
+	}
+	.blog_content img {
+		@apply my-5 w-full;
+	}
+
+	.blog_content a {
+		@apply border-b;
+	}
+
+	.yellow h2::before {
+		@apply bg-yellow-500;
+	}
+
+	.yellow a {
+		@apply border-b-yellow-500;
+	}
+	.yellow a:hover {
+		@apply bg-yellow-500 transition-all;
+	}
+
+	.blue h2::before {
+		@apply bg-blue-500;
+	}
+	.blue a {
+		@apply border-b-blue-500;
+	}
+	.blue a:hover {
+		@apply bg-blue-500 transition-all;
+	}
+}
+.green h2::before {
+	@apply bg-green-500;
+}
+.green a {
+	@apply border-b-green-500;
+}
+
+.green a:hover {
+	@apply bg-green-500 transition-all;
+}
